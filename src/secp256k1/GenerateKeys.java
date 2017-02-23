@@ -25,8 +25,9 @@ public class GenerateKeys {
 	}
 	
 	public void generate(){
-//		BigInteger privateKey = new BigInteger("6d2718f3705f42c9b94a420bbf6f4c9db7a6f2f470c4a9acfaae95e4252c3f39",16);
-		BigInteger privateKey = new BigInteger(GetRandom.getPrivateKey(),16);
+		BigInteger privateKey = new BigInteger("3",16);
+//		BigInteger privateKey = new BigInteger(GetRandom.getPrivateKey(),16);
+//		if(privateKey.compareTo(new BigInteger("0",10))<0)
 		Test1_Multiply2  cal = new Test1_Multiply2();
 		Node2 publicKey = cal.Multiply(privateKey, this.G);
 		System.out.println("#pub-x :"+publicKey.getX());
@@ -70,9 +71,11 @@ public class GenerateKeys {
 //		String y = s.substring(64,s.length());
 //		System.out.println("$"+new BigInteger(x,16));
 //		System.out.println("$"+new BigInteger(y,16));
-		System.out.println("$"+generate.getPublicKey().getY());
+//		System.out.println("$"+generate.getPublicKey().getY());
 //		System.out.println(new BigInteger(generate.getHexPrivateKey(),16));
-		System.out.println("privateKey:"+generate.getHexPrivateKey()+"length:"+generate.getHexPrivateKey().length());
-		System.out.println("publicKey:"+generate.getHexPublicKey());
+//		System.out.println("privateKey:"+generate.getHexPrivateKey()+"length:"+generate.getHexPrivateKey().length());
+//		System.out.println("publicKey:"+generate.getHexPublicKey());
+		BigInteger s = new BigInteger(GetRandom.getPrivateKey(),16);
+		System.out.println(s.toString());
 	}
 }
